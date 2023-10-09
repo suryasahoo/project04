@@ -1,32 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Delius+Unicase&family=Inter:wght@400;500&family=Poppins&display=swap');
+/* Resetting default styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* Body styles */
+
 body {
+    font-family: 'Inter', sans-serif;
     background-color: #3b4664;
+    margin: 0;
+    padding: 0;
 }
 
+
+/* Calculator container styles */
+
+.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #252d44;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+
+/* Header styles */
+
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-block: 100px;
-    margin-bottom: 5px;
-    margin-right: 300px;
-    font-family: 'inter';
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
     color: #fff;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
+/* Input field styles */
 
 .input-field {
     position: relative;
@@ -37,94 +50,86 @@ body {
 }
 
 .display {
-    font-family: 'Segoe UI';
-    font-weight: 700;
-    font-size: 35px;
-    height: 75px;
-    width: 96%;
+    font-size: 2rem;
+    height: 5vh;
+    width: 90vw;
     text-align: right;
     color: #fff;
-    border-radius: 5px;
     background: #181f32;
-    line-height: normal;
-    letter-spacing: 10px;
+    border-radius: 5px;
+    padding: 25px;
+    border: none;
+    outline: none;
 }
 
-.display:focus {
-    color: transparent;
-    text-shadow: 0px 0px 0px #fff;
-}
 
-::placeholder {
-    color: #fff;
-}
+/* Numpad container styles */
 
 .Numpad {
     border-radius: 5px;
     background: #252d44;
-    height: 100%;
-    width: 400px;
+    width: 90vw;
+    max-width: 400px;
     padding: 20px;
+    margin: 0 auto;
 }
+
+
+/* Button container styles */
 
 .btn-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+
+/* Button styles */
+
+.btn {
+    margin: 10px;
+    padding: 16px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    outline: none;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .btn-number {
-    margin: 10px;
-    padding: 6px;
-    border-radius: 5px;
     background-color: #eae3db;
     color: #181f32;
-    font-family: inter;
-    font-weight: 800;
-    font-size: 20px;
-    border-color: transparent;
-    cursor: pointer;
 }
 
 .btn-del {
-    margin: 10px;
-    padding: 6px;
     background-color: #3b4664;
-    border-color: transparent;
-    border-radius: 5px;
     color: #fff;
-    font-family: inter;
-    font-weight: 800;
-    cursor: pointer;
     font-size: 15px;
+}
+
+.btn-operator {
+    background-color: #647299;
+    color: #fff;
 }
 
 .btn-reset {
-    grid-column-start: -3;
-    grid-column-end: 1;
     background-color: #647299;
     color: #fff;
-    margin: 10px;
-    padding: 10px;
-    font-family: inter;
-    font-weight: 800;
     font-size: 15px;
-    border-color: transparent;
-    border-radius: 5px;
-    cursor: pointer;
+    grid-column-start: -3;
+    grid-column-end: 1;
 }
 
 .btn-equal {
-    grid-column-start: -1;
-    grid-column-end: 3;
-    margin: 10px;
-    padding: 10px;
     background-color: #d13f30;
     color: #fff;
-    font-family: inter;
-    font-weight: 800;
     font-size: 15px;
-    border-color: transparent;
-    border-radius: 5px;
-    cursor: pointer;
+    grid-column-start: -1;
+    grid-column-end: 3;
+}
+
+.btn:hover {
+    background-color: #c0c0c0;
+    color: #181f32;
 }

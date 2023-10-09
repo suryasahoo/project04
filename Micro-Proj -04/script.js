@@ -1,32 +1,43 @@
 const input = document.getElementById('input');
-const button = document.querySelectorAll('.btn-number');
+const buttons = document.querySelectorAll('.btn');
+
 let result = '';
-let arr = Array.from(button);
-arr.forEach((button) => {
+
+buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
-        if (e.target.innerHTML === '=') {
-            result = result.replace(/x/g, '*');
-            result = eval(result)
+        const value = e.target.getAttribute('data-value');
+
+        if (value === '=') {
+            try {
+                result = result.replace(/x/g, '*');
+                result = eval(result);
+                if (!isNaN(result)) {
+                    input.value = result;
+                } else {
+                    input.value = 'Error';
+                }
+            } catch (error) {
+                input.value = 'Error';
+            }
+        } else if (value === 'reset') {
+            result = '';
+            input.value = '0';
+        } else if (value === 'DEL') {
+            result = result.slice(0, -1);
             input.value = result;
-            console.log(result);
         } else {
-            result += e.target.innerHTML;
+            result += value;
             input.value = result;
         }
-    })
-})
+    });
+});
 
 function reset() {
-    reset = '';
-    input.value = 0;
+    result = '';
+    input.value = '0';
 }
 
-function del(error) {
-    if (result === eval(result)) {
-        error.innerHTML = alert('click on RESET');
-
-    } else {
-        result = result.slice(0, -1);
-        input.value = reset;
-    }
+function del() {
+    result = result.slice(0, -1);
+    input.value = result;
 }

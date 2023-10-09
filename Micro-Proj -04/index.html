@@ -9,37 +9,37 @@
 </head>
 
 <body>
-    <div class="header">
-        <h3>Calculator</h3>
-    </div>
-    <div class="container">
+    <div class="calculator">
+        <div class="header">
+            <h3>Calculator</h3>
+        </div>
         <div class="input-field">
             <input class="display" id="input" type="text" placeholder="0">
         </div>
         <div class="Numpad">
             <div class="btn-container">
-                <button class="btn-number" type="button" value="7">7</button>
-                <button class="btn-number" type="button" value="8">8</button>
-                <button class="btn-number" type="button" value="9">9</button>
-                <button class="btn-del" type="button" onclick="del()" value="DEL">DEL</button>
-                <button class="btn-number" type="button" value="4">4</button>
-                <button class="btn-number" type="button" value="5">5</button>
-                <button class="btn-number" type="button" value="6">6</button>
-                <button class="btn-number" type="button" value="+">+</button>
-                <button class="btn-number" type="button" value="1">1</button>
-                <button class="btn-number" type="button" value="2">2</button>
-                <button class="btn-number" type="button" value="3">3</button>
-                <button class="btn-number" type="button" value="-">-</button>
-                <button class="btn-number" type="button" value=".">.</button>
-                <button class="btn-number" type="button" value="0">0</button>
-                <button class="btn-number" type="button" value="/">/</button>
-                <button class="btn-number" type="button" value="x">x</button>
-                <button class="btn-reset" type="button" onclick="reset()" value="reset">RESET</button>
-                <button class="btn-number btn-equal" type="button">=</button>
+                <button class="btn btn-number" type="button" data-value="7">7</button>
+                <button class="btn btn-number" type="button" data-value="8">8</button>
+                <button class="btn btn-number" type="button" data-value="9">9</button>
+                <button class="btn btn-del" type="button" onclick="del()" data-value="DEL">DEL</button>
+                <button class="btn btn-number" type="button" data-value="4">4</button>
+                <button class="btn btn-number" type="button" data-value="5">5</button>
+                <button class="btn btn-number" type="button" data-value="6">6</button>
+                <button class="btn btn-operator" type="button" data-value="+">+</button>
+                <button class="btn btn-number" type="button" data-value="1">1</button>
+                <button class="btn btn-number" type="button" data-value="2">2</button>
+                <button class="btn btn-number" type="button" data-value="3">3</button>
+                <button class="btn btn-operator" type="button" data-value="-">-</button>
+                <button class="btn btn-number" type="button" data-value=".">.</button>
+                <button class="btn btn-number" type="button" data-value="0">0</button>
+                <button class="btn btn-operator" type="button" data-value="/">/</button>
+                <button class="btn btn-operator" type="button" data-value="*">x</button>
+                <button class="btn btn-reset" type="button" onclick="reset()" data-value="reset">RESET</button>
+                <button class="btn btn-equal" type="button" data-value="=">=</button>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 
 </html>
